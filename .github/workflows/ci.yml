@@ -50,13 +50,8 @@ jobs:
           ruby-version: .ruby-version
           bundler-cache: true
 
-      - name: Install Ruby dependencies
-        run: |
-          bundle install
-
       - name: Lint code for consistent style
-        run: bin/rubocop -f github
-
+        run: bin/rubocop --debug --verbose -f github
 
   test:
     runs-on: ubuntu-latest
