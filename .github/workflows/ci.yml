@@ -51,7 +51,7 @@ jobs:
           bundler-cache: true
 
       - name: Lint code for consistent style
-        run: bin/rubocop --debug --verbose -f github
+        run: bin/rubocop -f github -d
 
   test:
     runs-on: ubuntu-latest
