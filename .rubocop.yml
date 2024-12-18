@@ -64,6 +64,7 @@ AllCops:
     - 'support/**/*'
     - 'tmp/**/*'
     - 'test/**/*'
+    - 'vendor/**/*'
 
 require:
   - rubocop-erb
