@@ -1,16 +1,12 @@
-# Omakase Ruby styling for Rails
-# inherit_gem: { rubocop-rails-omakase: rubocop.yml }
+# # Omakase Ruby styling for Rails
+# # inherit_gem: { rubocop-rails-omakase: rubocop.yml }
 
-# require:
-#   - rubocop-erb
-#   - rubocop-rails
-#   - rubocop
+# # # Overwrite or add rules to create your own house style
+# # #
+# # # # Use `[a, [b, c]]` not `[ a, [ b, c ] ]`
+# # # Layout/SpaceInsideArrayLiteralBrackets:
+# # #   Enabled: false
 
-# # Overwrite or add rules to create your own house style
-# #
-# # # Use `[a, [b, c]]` not `[ a, [ b, c ] ]`
-# # Layout/SpaceInsideArrayLiteralBrackets:
-# #   Enabled: false
 # AllCops:
 #   NewCops: enable
 #   Exclude:
@@ -53,51 +49,67 @@
 #   Enabled: false
 # Bundler/OrderedGems:
 #   Enabled: false
+
 AllCops:
-  NewCops: enable
+  NewCops:
+    enable
+    # include erb files
+  Include:
+    - "**/*.rb"
+    - "**/*.html.erb"
   Exclude:
-    - 'bin/**/*'
-    - 'db/**/*'
-    - 'config/**/*'
-    - 'node_modules/**/*'
-    - 'script/**/*'
-    - 'support/**/*'
-    - 'tmp/**/*'
-    - 'test/**/*'
-    - 'vendor/**/*'
+    - "bin/**/*"
+    - "db/**/*"
+    - "config/**/*"
+    - "node_modules/**/*"
+    - "script/**/*"
+    - "support/**/*"
+    - "tmp/**/*"
+    - "test/**/*"
+    - "vendor/**/*"
 
 require:
   - rubocop-erb
   - rubocop-rails
-  - rubocop
 
-Style/ConditionalAssignment:
-  Enabled: false
-Style/StringLiterals:
-  Enabled: false
-Style/RedundantReturn:
-  Enabled: false
-Style/Documentation:
-  Enabled: false
-Style/WordArray:
-  Enabled: false
-Metrics/AbcSize:
-  Enabled: false
-Style/MutableConstant:
-  Enabled: false
-Style/SignalException:
-  Enabled: false
-Metrics/CyclomaticComplexity:
-  Enabled: false
-Style/MissingRespondToMissing:
-  Enabled: false
-Lint/MissingSuper:
-  Enabled: false
+Style/Documentation: #
+  Enabled: false # Active la règle
+  # Severity: error  # Génère une erreur si la documentation est absente
 Style/FrozenStringLiteralComment:
   Enabled: false
-Layout/LineLength:
-  Max: 120
+
+
+
+# Style/ConditionalAssignment:
+#   Enabled: false
+# Style/StringLiterals:
+#   Enabled: false
+# Style/RedundantReturn:
+#   Enabled: false
+# Style/Documentation:
+#   Enabled: false
+# Style/WordArray:
+#   Enabled: false
+# Metrics/AbcSize:
+#   Enabled: false
+# Style/MutableConstant:
+#   Enabled: false
+# Style/SignalException:
+#   Enabled: false
+# Metrics/CyclomaticComplexity:
+#   Enabled: false
+# Style/MissingRespondToMissing:
+#   Enabled: false
+# Lint/MissingSuper:
+#   Enabled: false
+# Style/FrozenStringLiteralComment:
+#   Enabled: false
+# Layout/LineLength:
+#   Max: 120
 Style/EmptyMethod:
   Enabled: false
 Bundler/OrderedGems:
-  Enabled: false
+  Enabled: true
+Naming/FileName:
+  Exclude:
+    - 'Gemfile'
